@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+
 
 @Component({
   imports: [RouterLink, RouterOutlet],
@@ -12,9 +13,12 @@ export class App {
     firstName = 'Kelly';
     lastName = 'Stegura';
     imageUrl = 'https://thewooffy.com/cdn/shop/articles/04-puppy_7c68cb65-68ac-4400-b300-2dda63f02423.png?v=1791499691&width=1100';
-count = 0;
+  count = 0;
 
-increment() {
-    this.count++; 
-}
+  signalCount = signal(0);
+  doubleSignalCount = computed(() => this.signalCount() * 2);
+    increaseSignalCount() {
+    this.signalCount.update ((value) => value + 1);
+  }
+
 }

@@ -239,6 +239,7 @@
 <nav>
   <li><a routerLink="/">Home</a></li>
   <li><a routerLink="/about">About</a></li>
+  <li><a routerLink="/student-form">Student Form</a></li>
 </nav>
 
 <hr>
@@ -251,6 +252,12 @@
       <h4>Practice 3: Counter</h4>
       <p>Counter: {{ count }}</p>
       <button (click)="increment()">Increase Counter</button> 
+      <h5>Signal & Double Signal Counter</h5>
+      <p>Signal Counter: {{ signalCount() }}</p>
+      <p>Double Signal Counter: {{ doubleSignalCount() }}</p>
+
+        <button (click)="incrementSignalCount()">Increase Signal Counter</button>
+
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
